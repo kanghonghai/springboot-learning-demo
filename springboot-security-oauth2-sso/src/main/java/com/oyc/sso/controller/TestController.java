@@ -1,6 +1,6 @@
 package com.oyc.sso.controller;
 
-import com.oyc.sso.service.UserServiceImpl;
+//import com.oyc.sso.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class TestController {
-    @Autowired
-    private UserServiceImpl userService;
+    //@Autowired
+    //private UserServiceImpl userService;
 
     @GetMapping("login")
     public String login(){
-        Object login = userService.login();
-        System.out.println(login);
+        //Object login = userService.login();
+        //System.out.println(login);
         return "login";
     }
 

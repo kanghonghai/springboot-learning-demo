@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /security
+    #context-path: /security
   port: 8888
 
 
@@ -11,9 +11,9 @@ server:
 #      password: 123456
 spring:
   datasource:
-    url: jdbc:mysql://146.56.192.87:3306/oyc_security?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-    username: oyc
-    password: 111111
+    url: jdbc:mysql://127.0.0.1:3307/oyc_security?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     properties:

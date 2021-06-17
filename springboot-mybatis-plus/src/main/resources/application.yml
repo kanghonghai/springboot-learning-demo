@@ -4,8 +4,8 @@ spring:
 #    url: ib3WahyAm+ykppYtwIzmfV2okR3Ft9c0u4zmnmj5mDfhzvR4vlA2dIBCOLkvo6gzQYlyNxIMASQ23/yix9lLlkizAMU5hpKgrV5vbs6gaSEEDYlGyQtkLJSquV4N5nzlWvtoiiEzZ4P5XWpkadMBIGDiHwUKOf4QndLuzEW2EcDLL4tkWU9zZ/gdHemAE266
 #    username: S52Ob1/3YW3g7+iMMogsrw==
 #    password: WQs5me3mnnbiylPFK2magQ==
-    url: jdbc:mysql://146.56.192.87:3306/oyc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-    username: oyc
+    url: jdbc:mysql://127.0.0.1:3307/oyc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     ###  数据源类别

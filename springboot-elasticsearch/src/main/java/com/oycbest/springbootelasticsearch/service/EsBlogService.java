@@ -29,4 +29,8 @@ public interface EsBlogService {
     Page<EsBlog> getByKeyWord(String key, Pageable pageable);
 
     Page<EsBlog> queryForPage(String key, Pageable pageable);
+
+    Page<EsBlog> findByTitleLikeForPage(String title,  Pageable page);
+    Page<EsBlog> findByContentLikeForPage(String content, Pageable page);
+
 }

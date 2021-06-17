@@ -11,7 +11,7 @@ public class SpringBootMybatisPlusApplication {
 
         // 生成 16 位随机 AES 密钥
 //        String randomKey = AES.generateRandomKey();
-        String randomKey = "a469408fff97d86f";
+      //  String randomKey = "a469408fff97d86f";
 
         // 随机密钥加密
 //        randomKey: a469408fff97d86f ,
@@ -19,12 +19,12 @@ public class SpringBootMybatisPlusApplication {
 //        username: S52Ob1/3YW3g7+iMMogsrw==
 //        password: WQs5me3mnnbiylPFK2magQ==
 
-                String url = AES.encrypt("jdbc:mysql://146.56.192.87:3306/oyc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8", randomKey);
-        String username = AES.encrypt("oyc", randomKey);
+            /*    String url = AES.encrypt("jdbc:mysql://146.56.192.87:3306/oyc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8", randomKey);
+        String username = AES.encrypt("root", randomKey);
         String password = AES.encrypt("123456", randomKey);
 
         System.out.println(String.format("randomKey: %s ,url: %s ,username: %s ,password: %s",randomKey,url,username,password));
-
+*/
         SpringApplication.run(SpringBootMybatisPlusApplication.class, args);
     }
 

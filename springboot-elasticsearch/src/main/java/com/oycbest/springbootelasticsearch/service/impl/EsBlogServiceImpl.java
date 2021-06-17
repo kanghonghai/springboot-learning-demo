@@ -4,6 +4,8 @@ import com.oycbest.springbootelasticsearch.document.EsBlog;
 import com.oycbest.springbootelasticsearch.repository.EsBlogRepository;
 import com.oycbest.springbootelasticsearch.service.EsBlogService;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.Operator;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
@@ -81,13 +83,24 @@ public class EsBlogServiceImpl implements EsBlogService {
         if (StringUtils.isEmpty(key)) {
             return blogSearchRepository.findAll(pageable);
         }
+
+
+        BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery();
+
+
+
         //自定义查询
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
-                .withQuery(QueryBuilders.matchQuery("title", key))
-                .withQuery(QueryBuilders.matchQuery("content", key))
+
+                //.withQuery(QueryBuilders.matchQuery("content", key))
+                //.withQuery(QueryBuilders.matchQuery("title", key))
+
+                .withQuery(queryBuilder.should(QueryBuilders.matchQuery("content", key)).should(QueryBuilders.matchQuery("title", key)))
                 .withPageable(pageable)
                 .withSort(SortBuilders.fieldSort("id").order(SortOrder.ASC))
                 .build();
+
+
         Page<EsBlog> esBlogs = elasticsearchTemplate.queryForPage(searchQuery, EsBlog.class);
         return esBlogs;
     }
@@ -170,5 +183,15 @@ public class EsBlogServiceImpl implements EsBlogService {
 
         esBlogs.forEach(e -> logger.debug(e.toString()));
         return esBlogs;
+    }
+
+    @Override
+    public Page<EsBlog> findByTitleLikeForPage(String title, Pageable page) {
+        return blogSearchRepository.findByTitleLike(title,page);
+    }
+
+    @Override
+    public Page<EsBlog> findByContentLikeForPage(String content, Pageable page) {
+        return blogSearchRepository.findByContentLike(content,page);
     }
 }

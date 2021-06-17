@@ -18,10 +18,15 @@ public class Log4j2Controller {
 
     @GetMapping("test1")
     public String test1() {
+
+
         log.debug("test1");
         log.info("test1");
         log.warn("test1");
         log.error("test1");
+
+
         return "test1";
+
     }
 }

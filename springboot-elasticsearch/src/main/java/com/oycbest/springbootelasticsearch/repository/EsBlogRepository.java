@@ -22,4 +22,7 @@ public interface EsBlogRepository extends ElasticsearchRepository<EsBlog, Intege
      * @return
      */
     Page<EsBlog> findByTitleOrContentLike(String title, String content, Pageable page);
+    Page<EsBlog> findByTitleLike(String title,  Pageable page);
+    Page<EsBlog> findByContentLike(String content, Pageable page);
+
 }

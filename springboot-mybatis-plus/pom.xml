@@ -41,11 +41,11 @@
             <version>${druid.version}</version>
         </dependency>
         <!-- Mybatis-plus -->
-        <dependency>
+       <!-- <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatisplus-spring-boot-starter</artifactId>
             <version>${mybatisplus-spring-boot-starter.version}</version>
-        </dependency>
+        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>

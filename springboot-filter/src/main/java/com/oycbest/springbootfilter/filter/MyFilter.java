@@ -1,7 +1,10 @@
 package com.oycbest.springbootfilter.filter;
 
+import org.springframework.stereotype.Component;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
 /**
@@ -10,6 +13,7 @@ import java.io.IOException;
  * @Date 2020/4/19 9:59 下午
  */
 @WebFilter(filterName = "myFilter",urlPatterns = "/*")
+//@Component
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
