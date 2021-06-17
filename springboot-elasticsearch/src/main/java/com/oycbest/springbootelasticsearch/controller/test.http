@@ -1,0 +1,16 @@
+http://localhost:8888/blog/init
+http://localhost:8888/blog/save
+
+http://localhost:8888/blog/getById?id=1
+http://localhost:8888/blog/keyWord?key=aa
+
+http://localhost:8888/blog/getByContent?content=content1
+http://localhost:8888/blog/getByTitle?title=title1
+
+http://localhost:8888/blog/my/findById?id=1
+
+http://localhost:8888/blog/elasticsearchOperationsSave
+
+http://localhost:8888/blog/esBlog/1
+
+http://localhost:8888/blog/getById?id=7
